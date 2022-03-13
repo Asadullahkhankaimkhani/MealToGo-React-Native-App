@@ -1,0 +1,46 @@
+import { View, Text, StyleSheet } from "react-native";
+import React from "react";
+import styled from "styled-components/native";
+import { Avatar, Button, Card, Paragraph } from "react-native-paper";
+
+const Title = styled.Text`
+  padding: 16px;
+  color: ${({ theme }) => theme.colors.ui.primary};
+`;
+
+const RestaurantCard = styled(Card)`
+  background-color: #fff;
+`;
+
+const RestaurantCardCover = styled(Card.Cover)`
+  padding: 20px;
+  background-color: #fff;
+`;
+
+const RestaurantInfoCard = ({ restaurant = {} }) => {
+  const {
+    name = "Some Restaurant",
+    icon,
+    photos = [
+      "https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made-600x899.jpg",
+    ],
+    address = "100 some random street",
+    isOpenNow = true,
+    rating = 4,
+    isClosedTemporarily,
+  } = restaurant;
+  return (
+    <RestaurantCard elevation={5}>
+      <RestaurantCardCover source={{ uri: photos[0] }} />
+      <Title>{name}</Title>
+    </RestaurantCard>
+  );
+};
+
+// const styles = StyleSheet.create({
+//   card: { backgroundColor: "white" },
+//   cover: { padding: 20, backgroundColor: "white" },
+//   title: { padding: 16 },
+// });
+
+export default RestaurantInfoCard;
