@@ -6,10 +6,12 @@ import { Avatar, Button, Card, Paragraph } from "react-native-paper";
 const Title = styled.Text`
   padding: ${({ theme }) => theme.space[3]};
   color: ${({ theme }) => theme.colors.ui.primary};
+  font-family: ${({ theme }) => theme.fonts.body};
 `;
 
 const RestaurantCard = styled(Card)`
   color: ${({ theme }) => theme.colors.bg.primary};
+  padding: ${({ theme }) => theme.space[3]};
 `;
 
 const RestaurantCardCover = styled(Card.Cover)`
