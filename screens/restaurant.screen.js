@@ -9,12 +9,12 @@ const Container = styled(SafeAreaView)`
   ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`}
 `;
 const SearchSection = styled(View)`
-  padding: 16px;
+  padding: ${({ theme }) => theme.space[2]};
 `;
 
 const List = styled(View)`
   flex: 1;
-  padding: 16px;
+  padding: ${({ theme }) => theme.space[2]};
 `;
 
 const RestaurantScreen = () => {
