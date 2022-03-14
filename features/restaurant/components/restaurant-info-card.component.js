@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import React from "react";
 import styled from "styled-components/native";
 import { Avatar, Button, Card, Paragraph } from "react-native-paper";
+import { Spacer } from "../../../component/spacer/spacer";
 import { SvgXml } from "react-native-svg";
 import star from "../../../assets/star";
 import open from "../../../assets/open";
@@ -70,7 +71,7 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
         <Title>{name}</Title>
         <MiniContainer>
           <Rating>
-            {ratingArray.map((index) => (
+            {ratingArray.map((ele, index) => (
               <SvgXml key={index} xml={star} width={20} height={20} />
             ))}
           </Rating>
@@ -80,9 +81,9 @@ const RestaurantInfoCard = ({ restaurant = {} }) => {
                 CLOSED TEMPORARILY
               </Text>
             )}
-            <View style={{ paddingLeft: 16 }} />
+            <Spacer variant="left.large" />
             {isOpenNow && <SvgXml xml={open} width={20} height={20} />}
-            <View style={{ paddingLeft: 16 }} />
+            <Spacer variant="left.large" />
             <Image style={{ width: 15, height: 15 }} source={{ uri: icon }} />
           </RestaurantStatus>
         </MiniContainer>
